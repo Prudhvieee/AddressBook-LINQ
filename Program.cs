@@ -7,6 +7,8 @@ namespace AddressBook_LINQ
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to address book");
+            AddressBookRepo repo = new AddressBookRepo();
+            repo.AddData();
         }
     }
 }

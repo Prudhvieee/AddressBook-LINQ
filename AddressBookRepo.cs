@@ -11,6 +11,17 @@ namespace AddressBook_LINQ
         /// uc-1
         /// Creating Data Table
         /// </summary>
-        DataTable dataTable = new DataTable();
+        readonly DataTable dataTable = new DataTable();
+        public void AddData()
+        {
+            dataTable.Columns.Add("FirstName", typeof(string));
+            dataTable.Columns.Add("LastName", typeof(string));
+            dataTable.Columns.Add("Address", typeof(string));
+            dataTable.Columns.Add("City", typeof(string));
+            dataTable.Columns.Add("State", typeof(string));
+            dataTable.Columns.Add("ZipCode", typeof(string));
+            dataTable.Columns.Add("PhoneNumber", typeof(string));
+            dataTable.Columns.Add("EmailID", typeof(string));
+        }
     }
 }
