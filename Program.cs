@@ -28,6 +28,9 @@ namespace AddressBook_LINQ
             Console.WriteLine("Email");
             string Email = Console.ReadLine();
             repo.EditContact(FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email);
+            Console.WriteLine("Enter FirstName of contact to be deleted");
+            string name = Console.ReadLine();
+            repo.DeleteContact(name);
         }
     }
 }
