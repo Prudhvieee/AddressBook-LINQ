@@ -31,6 +31,12 @@ namespace AddressBook_LINQ
             Console.WriteLine("Enter FirstName of contact to be deleted");
             string name = Console.ReadLine();
             repo.DeleteContact(name);
+            Console.WriteLine("Enter City");
+            string city = Console.ReadLine();
+            repo.RetrieveContactsByCity(city);
+            Console.WriteLine("Enter State");
+            string state = Console.ReadLine();
+            repo.RetrieveContactsByState(state);
         }
     }
 }
