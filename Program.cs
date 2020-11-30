@@ -37,6 +37,7 @@ namespace AddressBook_LINQ
             Console.WriteLine("Enter State");
             string state = Console.ReadLine();
             repo.RetrieveContactsByState(state);
+            repo.CountByCityAndState();
         }
     }
 }
