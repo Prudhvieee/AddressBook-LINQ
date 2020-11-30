@@ -126,5 +126,17 @@ namespace AddressBook_LINQ
                 Console.WriteLine(row.City + "\t" + row.State + "\t" + row.Count);
             }
         }
+        public void SortContactsForACity(string city)
+        {
+            var records = dataTable.AsEnumerable().Where(x => x.Field<string>("city") == city).OrderBy(x => x.Field<string>("FirstName")).ThenBy(x => x.Field<string>("LastName"));
+            foreach (DataRow row in records)
+            {
+                foreach (DataColumn column in dataTable.Columns)
+                {
+                    Console.Write(row[column] + "\t");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }

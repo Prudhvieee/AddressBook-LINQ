@@ -38,6 +38,9 @@ namespace AddressBook_LINQ
             string state = Console.ReadLine();
             repo.RetrieveContactsByState(state);
             repo.CountByCityAndState();
+            Console.WriteLine("Enter City");
+            string cityName = Console.ReadLine();
+            repo.SortContactsForACity(cityName);
         }
     }
 }
