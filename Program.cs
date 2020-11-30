@@ -41,6 +41,8 @@ namespace AddressBook_LINQ
             Console.WriteLine("Enter City");
             string cityName = Console.ReadLine();
             repo.SortContactsForACity(cityName);
+            repo.AddAddressBookNameTypeColumn();
+            repo.GetCountByType();
         }
     }
 }

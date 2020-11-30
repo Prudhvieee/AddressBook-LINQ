@@ -138,5 +138,31 @@ namespace AddressBook_LINQ
                 Console.WriteLine();
             }
         }
+        public void AddAddressBookNameTypeColumn()
+        {
+            
+            DataColumn column;
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "AddressBookName";
+            column.AllowDBNull = false;
+            column.DefaultValue = "Prudhvi";
+            dataTable.Columns.Add(column);
+            
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "ContactType";
+            column.AllowDBNull = false;
+            column.DefaultValue = "Friends";
+            dataTable.Columns.Add(column);
+        }
+        public void GetCountByType()
+        {
+            var element = from contact in dataTable.AsEnumerable()
+                          group contact by contact.Field<string>("ContactType") into data
+                          select new { typename = data.Key, Count = data.Count() };
+
+            element.ToList().ForEach(element => Console.WriteLine($"ContactType : {element.typename} \t Count = {element.Count}"));
+        }
     }
 }
